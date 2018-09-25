@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+.ipynb_checkpoints
+.ipynb_checkpoints/*
+__pycache__/
+*.py[cod]
+*$py.class
+
+.DS_Store
+
+# C extensions
+*.so
+
+*~
+*.log
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+metastore_db/
+*.pickle
+*.pkl
+experiment_output/master_summary_dataframe-20180514-190154/*
+*.ipynb
+indicator_dump
+
+*.zip
+results-may14-final.zip
+aws_test.py

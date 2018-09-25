@@ -1,0 +1,21 @@
+Configure
+
+
+All configuration for the EMS is set with two files in the project root directory:
+
+
+ems_config.sh contains the environment variables and path settings necessary to run experiments. Be sure that there is an "if" condition that matches the hostname of the machine where experiments will be run, and that the paths and environment variables inside the if-block are correct for the machine.
+
+
+environment_config.py returns environment-dependent instances of different clients. Be sure that for each function there is an "if" condition that matches the hostname of the machine where experiments will be run, and that the paths in the if-block are correct for the machine.
+
+
+Run
+
+
+Once configuration is complete, simply run the run_full_pipeline.sh script:
+sh run_full_pipeline.sh
+
+Note: if multiple experiments are being run, they must be run using an external loop over all target EDDs, not internal loops within the Python code itself.  This is due to a data persistence problem within one of the imputation libraries which can cause inconsistent results between runs.
+
+The run_in_serial.sh script is designed to take care of this.  See the run_full_pipeline.sh script for example usage.
