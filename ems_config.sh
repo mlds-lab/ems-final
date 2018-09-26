@@ -21,17 +21,17 @@ if [[ $(hostname -s) = cerebralcortexems ]]; then
     sudo chmod 777 /var/log/cerebralcortex/
 
 # aws
-elif [[ $(hostname -s) = ip-172-31-23-188 ]]; then
+elif [[ $(hostname -s) = ip-172-31-82-35 ]]; then
 
     echo AWS DETECTED
 
     export PYSPARK_PYTHON=/usr/bin/python3.6
-    export SPARK_HOME=/usr/local/spark/
+    export SPARK_HOME=/usr/lib/spark/
     export PATH=$SPARK_HOME/bin:$PATH
     export SPARK_MASTER="local[*]"
 
     export PYSPARK_DRIVER_PYTHON=/usr/bin/python3.6
-    export PYTHONPATH=/usr/local/spark/python/lib/py4j-0.10.4-src.zip:/usr/local/spark/python/
+    export PYTHONPATH=/usr/lib/spark/python/lib/py4j-0.10.4-src.zip:/usr/lib/spark/python/
 
     sudo chmod 777 /tmp/logs/spark.log
     sudo mkdir /var/log/cerebralcortex/
