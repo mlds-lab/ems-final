@@ -24,8 +24,8 @@ def get_cc(hostname):
     if hostname == "cerebralcortexems":
         cc = CerebralCortex('/home/vagrant/CerebralCortex-DockerCompose/cc_config_file/cc_vagrant_configuration.yml')
 
-    if hostname == "ip-172-31-23-188":
-        cc = CerebralCortex('/home/ec2-user/cc_aws_config.yml')
+    if hostname == "ip-172-31-82-35":
+        cc = CerebralCortex('/home/hadoop/cc_aws_config-testusers.yml')
 
     elif '10dot' in hostname or 'memphis' in hostname or 'dagobah' in hostname:
         cc = CerebralCortex('/cerebralcortex/code/config/cc_starwars_configuration.yml')
@@ -56,7 +56,7 @@ def get_minio_client(hostname):
         MINIO_ACCESS_KEY = ''
         MINIO_SECRET_KEY = ''
 
-    elif '10dot' in hostname or 'memphis' in hostname or 'dagobah' in hostname:
+    elif '10dot' in hostname or 'memphis' in hostname or 'dagobah' in hostname or "ip-172-31-82-35" in hostname:
         cc = get_cc(hostname)
 
         MINIO_IP = cc.config['minio']['host'] + ':' + str(cc.config['minio']['port'])
@@ -89,7 +89,7 @@ def get_spark_context(hostname):
     if hostname == "cerebralcortexems":
         sc = SparkContext("local[8]", "MOSAIC")
 
-    elif hostname == "ip-172-31-23-188":
+    elif hostname == "ip-172-31-82-35":
         sc = SparkContext("local[8]", "MOSAIC")
         # pass
 
