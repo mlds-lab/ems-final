@@ -5,8 +5,8 @@ data_dir=master_data_file
 # summarize data
 echo "Summarizing data to directory $data_dir"
 
-# sh run_master_summarize.sh        # uncomment for production run!!
-sh run_master_summarize.sh test     # comment for production run!!
+sh run_master_summarize.sh        # uncomment for production run
+# sh run_master_summarize.sh test     # comment for production run
 
 # clip summary dataframe
 echo "Clipping data in directory $data_dir "
