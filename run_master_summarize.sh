@@ -7,7 +7,7 @@ subjects="master_participants_september.json"
 data_file="master_data_file/master_summary_dataframe.pkl"
 parallel="by-subject"
 # parallel="single"
-localtime="false"
+localtime="true"
 
 #Read optional mode from command line
 if (( $# != 1 )); then
